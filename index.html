@@ -1,0 +1,3377 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Digital Hana Artes® — Creatividad computacional donde se cruzan el arte, los datos, la inteligencia artificial y la blockchain. Expresionismo abstracto posposmoderno tejido en la herencia española."
+    >
+
+    <meta
+        name="theme-color"
+        content="#0a0806"
+    >
+
+    <meta
+        property="og:title"
+        content="Digital Hana Artes® — Motor Abstracto"
+    >
+
+    <meta
+        property="og:description"
+        content="Arte × Datos × Inteligencia × Blockchain × Abstracción"
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:image"
+        content="assets/DHA_logo.png"
+    >
+
+    <title>
+        Digital Hana Artes® — [Motor Abstracto]
+    </title>
+
+
+    <!-- =====================================================
+         TIPOGRAFÍAS · FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           DHA — PROTOCOLO ABSTRACTO · EDICIÓN ESPAÑOLA
+           (Claroscuro · Azulejo · Barroco · Duende)
+        ====================================================== */
+
+        :root {
+
+            /* negro · tinta */
+            --negro: #0a0806;
+            --negro-2: #14100c;
+            --negro-3: #1c1712;
+
+            /* hueso · pergamino */
+            --hueso: #ece0c4;
+            --pergamino: #c9b88a;
+            --ceniza: #8a7a5f;
+            --sombra: #4a4034;
+
+            /* heráldica española — paleta */
+            --carmesi: #a01518;      /* rojo de Castilla */
+            --carmesi-2: #7a0f12;
+            --gualda: #d4a017;       /* amarillo gualda */
+            --azul: #1a3a6b;         /* azul de Indias */
+            --verde: #2a6b4a;        /* verde aceituna */
+            --oro: #c9a227;          /* pan de oro */
+            --tinto: #6b1a2e;        /* vino tinto */
+
+            --linea: rgba(236,224,196,.22);
+            --linea-suave: rgba(236,224,196,.07);
+
+            --max: 1400px;
+
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--negro);
+        }
+
+
+        body {
+
+            background: var(--negro);
+
+            color: var(--hueso);
+
+            font-family:
+                "Cormorant Garamond",
+                "Inter",
+                Georgia,
+                serif;
+
+            overflow-x: hidden;
+
+            cursor: crosshair;
+
+            position: relative;
+
+            line-height: 1.75;
+
+        }
+
+
+        ::selection {
+            background: var(--carmesi);
+            color: var(--hueso);
+        }
+
+
+        /* =====================================================
+           TEXTURA · PAPEL DE ALGODÓN
+        ====================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: 9997;
+
+            opacity: .05;
+
+            background-image:
+
+                repeating-conic-gradient(
+                    from 0deg,
+                    rgba(236,224,196,.12) 0deg,
+                    rgba(0,0,0,.10) 1deg,
+                    rgba(236,224,196,.06) 2deg,
+                    rgba(0,0,0,.06) 3deg
+                );
+
+            mix-blend-mode: overlay;
+
+        }
+
+
+        /* lunares — flamenco dots */
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: 9996;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(212,160,23,.05) 1.5px,
+                    transparent 2px
+                ) 0 0 / 28px 28px,
+
+                radial-gradient(
+                    circle,
+                    rgba(160,21,24,.04) 1.5px,
+                    transparent 2px
+                ) 14px 14px / 28px 28px,
+
+                radial-gradient(
+                    ellipse at 12% 8%,
+                    rgba(160,21,24,.06),
+                    transparent 42%
+                ),
+
+                radial-gradient(
+                    ellipse at 88% 72%,
+                    rgba(26,58,107,.07),
+                    transparent 45%
+                );
+
+            mix-blend-mode: screen;
+
+        }
+
+
+        /* =====================================================
+           CINEMÁTICA · KEYFRAMES
+        ====================================================== */
+
+        @keyframes tinta-expandida {
+
+            0% {
+                transform: translate(0, 0);
+                clip-path: inset(0 0 0 0);
+            }
+            6% {
+                transform: translate(-2px, 2px);
+                clip-path: inset(12% 0 76% 0);
+            }
+            12% {
+                transform: translate(3px, -1px);
+                clip-path: inset(42% 0 38% 0);
+            }
+            18% {
+                transform: translate(-1px, -3px);
+                clip-path: inset(68% 0 12% 0);
+            }
+            24% {
+                transform: translate(0, 0);
+                clip-path: inset(0 0 0 0);
+            }
+            100% {
+                transform: translate(0, 0);
+                clip-path: inset(0 0 0 0);
+            }
+
+        }
+
+
+        @keyframes pincelada {
+
+            0%, 100% { clip-path: inset(0 0 0 0); }
+            10% { clip-path: inset(22% 0 58% 0); }
+            20% { clip-path: inset(78% 0 12% 0); }
+            30% { clip-path: inset(38% 0 32% 0); }
+            40% { clip-path: inset(8% 0 88% 0); }
+            50% { clip-path: inset(0 0 0 0); }
+
+        }
+
+
+        @keyframes vela-oscura {
+
+            0% { top: -100%; }
+            100% { top: 200%; }
+
+        }
+
+
+        @keyframes giro-lento {
+
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+
+        }
+
+
+        @keyframes giro-inverso {
+
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
+
+        }
+
+
+        @keyframes llama {
+
+            0%, 100% { opacity: .55; transform: scale(1); }
+            50% { opacity: .95; transform: scale(1.04); }
+
+        }
+
+
+        @keyframes azulejo-mov {
+
+            0% { background-position: 0 0, 8px 8px; }
+            100% { background-position: 32px 32px, 40px 40px; }
+
+        }
+
+
+        /* =====================================================
+           LÍNEA DE LUZ · SCANLINE (vela)
+        ====================================================== */
+
+        .vela-linea {
+
+            position: fixed;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 1px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--carmesi),
+                var(--gualda),
+                transparent
+            );
+
+            opacity: .18;
+
+            pointer-events: none;
+
+            z-index: 9000;
+
+            animation: vela-oscura 11s linear infinite;
+
+        }
+
+
+        /* =====================================================
+           AZULEJO · BANDA CERÁMICA
+        ====================================================== */
+
+        .azulejo {
+
+            height: 16px;
+
+            width: 100%;
+
+            background:
+
+                linear-gradient(45deg, var(--carmesi) 25%, transparent 25%) 0 0 / 16px 16px,
+
+                linear-gradient(-45deg, var(--carmesi) 25%, transparent 25%) 0 0 / 16px 16px,
+
+                linear-gradient(45deg, transparent 75%, var(--carmesi) 75%) 0 0 / 16px 16px,
+
+                linear-gradient(-45deg, transparent 75%, var(--carmesi) 75%) 0 0 / 16px 16px,
+
+                linear-gradient(45deg, var(--azul) 25%, transparent 25%) 8px 8px / 16px 16px,
+
+                linear-gradient(-45deg, var(--azul) 25%, transparent 25%) 8px 8px / 16px 16px,
+
+                linear-gradient(45deg, transparent 75%, var(--azul) 75%) 8px 8px / 16px 16px,
+
+                linear-gradient(-45deg, transparent 75%, var(--azul) 75%) 8px 8px / 16px 16px,
+
+                var(--gualda);
+
+            opacity: .92;
+
+        }
+
+
+        .azulejo-fino {
+
+            height: 8px;
+
+            width: 100%;
+
+            background:
+
+                repeating-linear-gradient(
+                    90deg,
+                    var(--carmesi) 0 10px,
+                    transparent 10px 16px,
+                    var(--gualda) 16px 22px,
+                    transparent 22px 28px,
+                    var(--azul) 28px 38px,
+                    transparent 38px 44px
+                );
+
+            opacity: .55;
+
+        }
+
+
+        /* =====================================================
+           NAVEGACIÓN · NAV
+        ====================================================== */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: rgba(10,8,6,.88);
+
+            border-bottom: 1px solid var(--linea);
+
+            backdrop-filter: blur(20px);
+
+            -webkit-backdrop-filter: blur(20px);
+
+            padding: 0 clamp(16px, 4vw, 60px);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            height: 66px;
+
+        }
+
+
+        nav::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -4px;
+
+            width: 100%;
+            height: 4px;
+
+            background:
+
+                repeating-linear-gradient(
+                    90deg,
+                    var(--carmesi) 0 8px,
+                    transparent 8px 12px,
+                    var(--gualda) 12px 18px,
+                    transparent 18px 22px,
+                    var(--azul) 22px 30px,
+                    transparent 30px 34px
+                );
+
+            opacity: .6;
+
+        }
+
+
+        .nav-marca {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-family: "Cinzel", "Playfair Display", serif;
+
+            font-weight: 700;
+
+            font-size: 15px;
+
+            letter-spacing: .22em;
+
+            color: var(--hueso);
+
+            text-decoration: none;
+
+        }
+
+
+        .nav-logo {
+
+            width: 30px;
+            height: 30px;
+
+            object-fit: contain;
+
+            filter: invert(1) sepia(.35) hue-rotate(-12deg) contrast(1.15);
+
+        }
+
+
+        .nav-enlaces {
+
+            display: flex;
+
+            gap: 26px;
+
+            align-items: center;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: .16em;
+
+            font-weight: 500;
+
+        }
+
+
+        .nav-enlaces a {
+
+            color: var(--ceniza);
+
+            text-decoration: none;
+
+            transition: color .2s ease;
+
+            position: relative;
+
+        }
+
+
+        .nav-enlaces a::before {
+
+            content: "";
+
+            position: absolute;
+
+            bottom: -5px;
+            left: 0;
+
+            width: 0;
+            height: 1px;
+
+            background: var(--carmesi);
+
+            transition: width .3s ease;
+
+        }
+
+
+        .nav-enlaces a:hover {
+            color: var(--hueso);
+        }
+
+
+        .nav-enlaces a:hover::before {
+            width: 100%;
+        }
+
+
+        /* IDIOMA · LANGUAGE SWITCH */
+
+        .idioma {
+
+            position: relative;
+
+            display: inline-block;
+
+        }
+
+
+        .idioma-input {
+
+            position: absolute;
+
+            opacity: 0;
+
+            width: 0;
+            height: 0;
+
+        }
+
+
+        .idioma-boton {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            cursor: pointer;
+
+            padding: 8px 14px;
+
+            border: 1px solid var(--linea);
+
+            background: transparent;
+
+            font-family: "Inter", "DM Mono", monospace;
+
+            font-size: 11px;
+
+            letter-spacing: .12em;
+
+            color: var(--hueso);
+
+            transition: all .2s ease;
+
+            user-select: none;
+
+        }
+
+
+        .idioma-boton:hover {
+
+            background: var(--carmesi);
+
+            color: var(--hueso);
+
+            border-color: var(--carmesi);
+
+        }
+
+
+        .idioma-lista {
+
+            position: absolute;
+
+            top: calc(100% + 8px);
+
+            right: 0;
+
+            min-width: 160px;
+
+            background: var(--negro-2);
+
+            border: 1px solid var(--linea);
+
+            padding: 0;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(-4px);
+
+            transition: all .2s ease;
+
+            z-index: 1001;
+
+        }
+
+
+        .idioma-opcion {
+
+            display: block;
+
+            padding: 10px 16px;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 11px;
+
+            letter-spacing: .12em;
+
+            color: var(--ceniza);
+
+            text-decoration: none;
+
+            transition: all .2s ease;
+
+            border-bottom: 1px solid rgba(236,224,196,.06);
+
+        }
+
+
+        .idioma-opcion:hover {
+
+            background: var(--negro-3);
+
+            color: var(--gualda);
+
+        }
+
+
+        .idioma-opcion.activo {
+
+            color: var(--hueso);
+
+            background: var(--carmesi);
+
+        }
+
+
+        .idioma-input:checked ~ .idioma-lista,
+        .idioma:focus-within .idioma-lista {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+
+        }
+
+
+        /* =====================================================
+           PRIMER ACTO · HERO
+        ====================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 110px 0 60px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .hero-red {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+
+            width: 100%;
+
+        }
+
+
+        .hero-voz {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .hero-encima {
+
+            font-family: "Cinzel", serif;
+
+            font-size: 11px;
+
+            letter-spacing: .38em;
+
+            color: var(--gualda);
+
+            margin-bottom: 22px;
+
+            display: inline-block;
+
+            border: 1px solid var(--gualda);
+
+            padding: 8px 18px;
+
+            transform: rotate(-1deg);
+
+            background: rgba(212,160,23,.06);
+
+            text-transform: uppercase;
+
+        }
+
+
+        .hero-epígrafe {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-style: italic;
+
+            font-size: 16px;
+
+            letter-spacing: .02em;
+
+            color: var(--pergamino);
+
+            margin-bottom: 30px;
+
+            padding-left: 22px;
+
+            border-left: 2px solid var(--carmesi);
+
+            transform: rotate(-.4deg);
+
+            line-height: 1.7;
+
+        }
+
+
+        .hero-epígrafe .firma {
+
+            display: block;
+
+            font-family: "Inter", sans-serif;
+
+            font-style: normal;
+
+            font-size: 11px;
+
+            letter-spacing: .24em;
+
+            color: var(--ceniza);
+
+            margin-top: 8px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .hero-voz h1 {
+
+            font-family: "Playfair Display", serif;
+
+            font-weight: 900;
+
+            font-size: clamp(3.4rem, 12vw, 10rem);
+
+            line-height: .92;
+
+            letter-spacing: -.015em;
+
+            position: relative;
+
+        }
+
+
+        .hero-voz h1 .palabra {
+
+            display: block;
+
+            position: relative;
+
+        }
+
+
+        .hero-voz h1 .palabra-1 {
+
+            color: var(--hueso);
+
+            text-shadow:
+
+                5px 0 0 var(--carmesi),
+
+                -4px 0 0 var(--azul);
+
+            animation: pincelada 7s infinite;
+
+        }
+
+
+        .hero-voz h1 .palabra-2 {
+
+            color: transparent;
+
+            -webkit-text-stroke: 2px var(--carmesi);
+
+            font-style: italic;
+
+            transform: translateX(26px);
+
+            animation: tinta-expandida 9s infinite;
+
+        }
+
+
+        .hero-voz h1 .palabra-3 {
+
+            color: var(--negro);
+
+            background: var(--gualda);
+
+            padding: 0 20px;
+
+            display: inline-block;
+
+            transform: skewX(-6deg);
+
+            animation: llama 5s infinite;
+
+            font-style: italic;
+
+        }
+
+
+        .hero-voz p {
+
+            margin-top: 42px;
+
+            max-width: 620px;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            color: var(--ceniza);
+
+            border-left: 3px solid var(--carmesi);
+
+            padding-left: 22px;
+
+        }
+
+
+        .hero-voz p strong {
+
+            color: var(--hueso);
+
+            font-weight: 700;
+
+            border-bottom: 2px solid var(--gualda);
+
+        }
+
+
+        .hero-acciones {
+
+            display: flex;
+
+            gap: 16px;
+
+            margin-top: 42px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .botón {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 30px;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            letter-spacing: .18em;
+
+            text-transform: uppercase;
+
+            text-decoration: none;
+
+            border: 1px solid var(--linea);
+
+            background: transparent;
+
+            color: var(--hueso);
+
+            transition: all .25s ease;
+
+            position: relative;
+
+            overflow: hidden;
+
+            z-index: 1;
+
+        }
+
+
+        .botón::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: -100%;
+
+            width: 100%;
+            height: 100%;
+
+            background: var(--carmesi);
+
+            transition: left .25s ease;
+
+            z-index: -1;
+
+        }
+
+
+        .botón:hover::before {
+            left: 0;
+        }
+
+
+        .botón:hover {
+
+            color: var(--hueso);
+
+            border-color: var(--carmesi);
+
+        }
+
+
+        .botón-primario {
+
+            background: var(--carmesi);
+
+            color: var(--hueso);
+
+            border-color: var(--carmesi);
+
+        }
+
+
+        .botón-primario::before {
+            background: var(--gualda);
+        }
+
+
+        .botón-primario:hover {
+            color: var(--negro);
+            border-color: var(--gualda);
+        }
+
+
+        /* =====================================================
+           ARCO DE HERRADURA · HORSESHOE ARCH (hero visual)
+        ====================================================== */
+
+        .hero-arte {
+
+            position: relative;
+
+            min-height: 660px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .arco-marco {
+
+            position: relative;
+
+            width: min(100%, 500px);
+
+            aspect-ratio: 5 / 7;
+
+            background: var(--negro-2);
+
+            /* arco de herradura — narowed at the base */
+            border: 2px solid var(--oro);
+
+            border-radius: 50% 50% 6% 6% / 58% 58% 4% 4%;
+
+            padding: 18px;
+
+            box-shadow:
+
+                0 0 0 6px var(--negro),
+
+                0 0 0 7px var(--linea),
+
+                0 30px 90px rgba(160,21,24,.22);
+
+            overflow: hidden;
+
+        }
+
+
+        .arco-marco::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 8px;
+
+            border: 1px solid var(--carmesi);
+
+            border-radius: 50% 50% 6% 6% / 58% 58% 4% 4%;
+
+            pointer-events: none;
+
+            z-index: 5;
+
+        }
+
+
+        .arco-marco::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 16px;
+
+            border: 1px solid rgba(212,160,23,.4);
+
+            border-radius: 50% 50% 6% 6% / 58% 58% 4% 4%;
+
+            pointer-events: none;
+
+            z-index: 5;
+
+        }
+
+
+        /* azulejo tile background inside the arch */
+
+        .azulejo-interior {
+
+            position: absolute;
+
+            inset: 22px;
+
+            background:
+
+                linear-gradient(45deg, rgba(160,21,24,.45) 25%, transparent 25%) 0 0 / 32px 32px,
+
+                linear-gradient(-45deg, rgba(160,21,24,.45) 25%, transparent 25%) 0 0 / 32px 32px,
+
+                linear-gradient(45deg, transparent 75%, rgba(26,58,107,.55) 75%) 0 0 / 32px 32px,
+
+                linear-gradient(-45deg, transparent 75%, rgba(26,58,107,.55) 75%) 0 0 / 32px 32px,
+
+                radial-gradient(
+                    circle at center,
+                    rgba(212,160,23,.16) 0%,
+                    transparent 60%
+                ),
+
+                var(--negro-3);
+
+            border-radius: 50% 50% 6% 6% / 58% 58% 4% 4%;
+
+            animation: azulejo-mov 40s linear infinite;
+
+            z-index: 1;
+
+        }
+
+
+        /* concentric circles */
+
+        .rosácea {
+
+            position: absolute;
+
+            inset: 22px;
+
+            display: grid;
+
+            place-items: center;
+
+            z-index: 2;
+
+            pointer-events: none;
+
+            border-radius: 50% 50% 6% 6% / 58% 58% 4% 4%;
+
+        }
+
+
+        .aro {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            border: 1px solid;
+
+        }
+
+
+        .aro-1 {
+
+            width: 82%;
+            height: 82%;
+
+            border-color: rgba(160,21,24,.6);
+
+            border-style: dashed;
+
+            animation: giro-lento 60s linear infinite;
+
+        }
+
+
+        .aro-2 {
+
+            width: 62%;
+            height: 62%;
+
+            border-color: rgba(212,160,23,.55);
+
+            animation: giro-inverso 45s linear infinite;
+
+        }
+
+
+        .aro-3 {
+
+            width: 42%;
+            height: 42%;
+
+            border-color: rgba(26,58,107,.7);
+
+            border-style: dotted;
+
+            border-width: 2px;
+
+            animation: giro-lento 30s linear infinite;
+
+        }
+
+
+        .aro-4 {
+
+            width: 24%;
+            height: 24%;
+
+            border-color: rgba(201,162,39,.8);
+
+            animation: giro-inverso 22s linear infinite;
+
+        }
+
+
+        /* monograma */
+
+        .monograma {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: grid;
+
+            place-items: center;
+
+            font-family: "Playfair Display", serif;
+
+            font-weight: 900;
+
+            font-style: italic;
+
+            font-size: clamp(7rem, 18vw, 14rem);
+
+            color: var(--carmesi);
+
+            text-shadow:
+
+                6px 6px 0 var(--gualda),
+
+                -3px -3px 0 var(--azul),
+
+                0 0 60px rgba(160,21,24,.55);
+
+            z-index: 4;
+
+            animation: llama 7s infinite;
+
+            line-height: 1;
+
+        }
+
+
+        .arco-leyenda {
+
+            position: absolute;
+
+            bottom: -46px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 10px;
+
+            letter-spacing: .38em;
+
+            color: var(--ceniza);
+
+            text-transform: uppercase;
+
+            white-space: nowrap;
+
+            z-index: 6;
+
+        }
+
+
+        /* =====================================================
+           BANDA · MARQUEE
+        ====================================================== */
+
+        .banda {
+
+            border-top: 1px solid var(--linea);
+
+            border-bottom: 1px solid var(--linea);
+
+            padding: 20px 0;
+
+            overflow: hidden;
+
+            background: var(--negro-2);
+
+            position: relative;
+
+        }
+
+
+        .banda::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background:
+
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0px,
+                    transparent 62px,
+                    rgba(212,160,23,.05) 63px,
+                    transparent 64px
+                );
+
+            pointer-events: none;
+
+            z-index: 1;
+
+        }
+
+
+        .banda-fila {
+
+            display: inline-flex;
+
+            gap: 46px;
+
+            animation: marquee 26s linear infinite;
+
+            font-family: "Cinzel", "Cormorant Garamond", serif;
+
+            font-size: 15px;
+
+            letter-spacing: .24em;
+
+            text-transform: uppercase;
+
+            white-space: nowrap;
+
+        }
+
+
+        .banda-fila span {
+
+            color: var(--ceniza);
+
+            position: relative;
+
+        }
+
+
+        .banda-fila span::before {
+
+            content: "«";
+
+            color: var(--carmesi);
+
+            margin-right: 8px;
+
+        }
+
+
+        .banda-fila span::after {
+
+            content: "»";
+
+            color: var(--carmesi);
+
+            margin-left: 8px;
+
+        }
+
+
+        @keyframes marquee {
+
+            to { transform: translateX(-50%); }
+
+        }
+
+
+        /* =====================================================
+           SECCIONES · ACTOS
+        ====================================================== */
+
+        section {
+
+            padding: 130px 0;
+
+            position: relative;
+
+            border-bottom: 1px solid var(--linea-suave);
+
+        }
+
+
+        .copa {
+
+            width: min(calc(100% - 40px), var(--max));
+
+            margin: auto;
+
+            position: relative;
+
+        }
+
+
+        .acto-etiqueta {
+
+            font-family: "Cinzel", serif;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: .38em;
+
+            color: var(--carmesi);
+
+            margin-bottom: 32px;
+
+            display: inline-block;
+
+            transform: rotate(-1deg);
+
+            border-bottom: 2px solid var(--gualda);
+
+            padding-bottom: 6px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .acto-título {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(2.6rem, 6.4vw, 6.4rem);
+
+            line-height: 1.02;
+
+            font-weight: 900;
+
+            margin-bottom: 34px;
+
+            letter-spacing: -.02em;
+
+        }
+
+
+        .acto-título .sombra {
+
+            color: transparent;
+
+            -webkit-text-stroke: 1.5px var(--gualda);
+
+            font-style: italic;
+
+        }
+
+
+        .acto-título .tachado {
+
+            text-decoration: line-through;
+
+            text-decoration-color: var(--carmesi);
+
+            text-decoration-thickness: 4px;
+
+        }
+
+
+        .acto-intro {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            color: var(--ceniza);
+
+            max-width: 720px;
+
+            margin-bottom: 62px;
+
+            border-left: 3px solid var(--gualda);
+
+            padding-left: 22px;
+
+        }
+
+
+        /* =====================================================
+           CUATRO DOMINIOS
+        ====================================================== */
+
+        .dominios {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 0;
+
+            border: 1px solid var(--linea);
+
+        }
+
+
+        .dominio {
+
+            padding: 44px 30px;
+
+            min-height: 320px;
+
+            position: relative;
+
+            border-right: 1px solid var(--linea);
+
+            border-bottom: 1px solid var(--linea);
+
+            background: var(--negro);
+
+            transition: all .3s ease;
+
+            cursor: crosshair;
+
+        }
+
+
+        .dominio:nth-child(4n) {
+            border-right: none;
+        }
+
+
+        .dominio:nth-last-child(-n+4) {
+            border-bottom: none;
+        }
+
+
+        .dominio:hover {
+
+            background: var(--negro-2);
+
+            transform: translateY(-4px);
+
+            border-color: var(--carmesi);
+
+        }
+
+
+        .dominio::before {
+
+            content: attr(data-número);
+
+            position: absolute;
+
+            top: 22px;
+            right: 26px;
+
+            font-family: "Playfair Display", serif;
+
+            font-style: italic;
+
+            font-size: 26px;
+
+            color: var(--carmesi);
+
+            opacity: .8;
+
+        }
+
+
+        .dominio-símbolo {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 54px;
+
+            margin-bottom: 30px;
+
+            color: var(--gualda);
+
+            opacity: .9;
+
+            animation: llama 6s infinite;
+
+            line-height: 1;
+
+        }
+
+
+        .dominio h3 {
+
+            font-family: "Cinzel", serif;
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+            letter-spacing: .12em;
+
+            margin-bottom: 16px;
+
+            color: var(--hueso);
+
+            text-transform: uppercase;
+
+        }
+
+
+        .dominio p {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 16px;
+
+            line-height: 1.85;
+
+            color: var(--ceniza);
+
+        }
+
+
+        /* =====================================================
+           EL ESTUDIO · ABOUT
+        ====================================================== */
+
+        .estudio-red {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+
+        }
+
+
+        .estudio-visual {
+
+            min-height: 520px;
+
+            position: relative;
+
+            background: var(--negro-2);
+
+            border: 1px solid var(--linea);
+
+            overflow: hidden;
+
+        }
+
+
+        .estudio-visual::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                radial-gradient(
+                    circle at 30% 30%,
+                    rgba(160,21,24,.42),
+                    transparent 45%
+                ),
+
+                radial-gradient(
+                    circle at 75% 65%,
+                    rgba(26,58,107,.48),
+                    transparent 45%
+                ),
+
+                radial-gradient(
+                    circle at 50% 92%,
+                    rgba(212,160,23,.28),
+                    transparent 50%
+                );
+
+            filter: blur(34px);
+
+            animation: llama 14s ease-in-out infinite;
+
+        }
+
+
+        .estudio-visual::after {
+
+            content: "H";
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%) rotate(-6deg);
+
+            font-family: "Playfair Display", serif;
+
+            font-weight: 900;
+
+            font-style: italic;
+
+            font-size: clamp(12rem, 26vw, 22rem);
+
+            color: transparent;
+
+            -webkit-text-stroke: 3px var(--carmesi);
+
+            opacity: .55;
+
+            line-height: 1;
+
+        }
+
+
+        .estudio-texto h2 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(2.4rem, 5vw, 5rem);
+
+            line-height: 1.05;
+
+            font-weight: 900;
+
+            margin-bottom: 24px;
+
+            letter-spacing: -.02em;
+
+        }
+
+
+        .estudio-texto h2 .subrayado {
+
+            background: var(--carmesi);
+
+            color: var(--hueso);
+
+            padding: 0 14px;
+
+            display: inline-block;
+
+            transform: skewX(-4deg);
+
+        }
+
+
+        .estudio-texto p {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            color: var(--ceniza);
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .estudio-texto p strong {
+
+            color: var(--gualda);
+
+            font-weight: 700;
+
+        }
+
+
+        /* =====================================================
+           OBRA · PROJECTS
+        ====================================================== */
+
+        .obra {
+
+            margin-bottom: 44px;
+
+            border: 1px solid var(--linea);
+
+            background: var(--negro-2);
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            position: relative;
+
+            transition: all .3s ease;
+
+        }
+
+
+        .obra:hover {
+
+            border-color: var(--carmesi);
+
+            transform: translateX(-4px);
+
+        }
+
+
+        .obra-visual {
+
+            min-height: 420px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: var(--negro);
+
+        }
+
+
+        .obra-visual img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            filter: grayscale(100%) sepia(.35) contrast(1.15);
+
+            transition: all .6s ease;
+
+        }
+
+
+        .obra:hover .obra-visual img {
+
+            filter: grayscale(0%) sepia(.15) contrast(1.08) hue-rotate(-12deg);
+
+            transform: scale(1.05);
+
+        }
+
+
+        .obra-visual::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    transparent 4px,
+                    rgba(0,0,0,.35) 5px
+                );
+
+            z-index: 1;
+
+            pointer-events: none;
+
+        }
+
+
+        .obra-info {
+
+            padding: clamp(30px, 5vw, 60px);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            position: relative;
+
+        }
+
+
+        .obra-tag {
+
+            font-family: "Cinzel", serif;
+
+            font-size: 11px;
+
+            letter-spacing: .28em;
+
+            color: var(--gualda);
+
+            margin-bottom: 22px;
+
+            display: inline-block;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .obra-info h3 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(2rem, 4.2vw, 4.2rem);
+
+            line-height: 1.02;
+
+            font-weight: 900;
+
+            margin-bottom: 22px;
+
+            color: var(--hueso);
+
+            letter-spacing: -.02em;
+
+        }
+
+
+        .obra-info h3 em {
+
+            font-style: italic;
+
+            color: var(--gualda);
+
+        }
+
+
+        .obra-info p {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+            color: var(--ceniza);
+
+            margin-bottom: 26px;
+
+        }
+
+
+        .tecnologías {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 26px;
+
+        }
+
+
+        .tecnologías span {
+
+            border: 1px solid var(--linea);
+
+            padding: 6px 12px;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: .1em;
+
+            color: var(--pergamino);
+
+            background: var(--negro);
+
+            text-transform: uppercase;
+
+        }
+
+
+        .obra-enlaces {
+
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .obra-enlaces .botón {
+
+            padding: 12px 20px;
+
+            font-size: 11px;
+
+        }
+
+
+        .obra-sello {
+
+            position: absolute;
+
+            bottom: 20px;
+            left: 20px;
+
+            width: 74px;
+            height: 74px;
+
+            object-fit: contain;
+
+            z-index: 3;
+
+            padding: 10px;
+
+            background: rgba(0,0,0,.6);
+
+            border: 1px solid var(--linea);
+
+            backdrop-filter: blur(10px);
+
+            -webkit-backdrop-filter: blur(10px);
+
+            filter: none !important;
+
+        }
+
+
+        .obra:hover .obra-sello {
+            border-color: var(--carmesi);
+        }
+
+
+        .obra.ancha .obra-visual {
+            min-height: 480px;
+        }
+
+
+        /* =====================================================
+           HANA · ORIGEN
+        ====================================================== */
+
+        .hana-red {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+
+        }
+
+
+        .hana-voz h2 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(3rem, 7.5vw, 7.5rem);
+
+            line-height: 1;
+
+            font-weight: 900;
+
+            margin-bottom: 24px;
+
+            letter-spacing: -.02em;
+
+        }
+
+
+        .hana-voz h2 .palabra {
+            display: block;
+        }
+
+
+        .hana-voz h2 .palabra-1 {
+            color: var(--hueso);
+        }
+
+
+        .hana-voz h2 .palabra-2 {
+
+            color: transparent;
+
+            -webkit-text-stroke: 3px var(--carmesi);
+
+            font-style: italic;
+
+            transform: translateX(30px);
+
+        }
+
+
+        .hana-voz p {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            color: var(--ceniza);
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .hana-voz p strong {
+            color: var(--gualda);
+        }
+
+
+        .hana-imagen {
+
+            min-height: 520px;
+
+            position: relative;
+
+            border: 1px solid var(--linea);
+
+            background: var(--negro-2);
+
+            overflow: hidden;
+
+        }
+
+
+        .hana-imagen::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(212,160,23,.24),
+                    transparent 50%,
+                    rgba(160,21,24,.24)
+                );
+
+            z-index: 1;
+
+            mix-blend-mode: screen;
+
+        }
+
+
+        .hana-imagen img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            filter: contrast(1.28) saturate(1.15) sepia(.12);
+
+            animation: pincelada 11s infinite;
+
+        }
+
+
+        /* =====================================================
+           LA PREGUNTA · PHILOSOPHY
+        ====================================================== */
+
+        .pregunta {
+
+            text-align: center;
+
+            padding: 170px 0;
+
+            background: var(--negro);
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .pregunta::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 50%,
+                    rgba(160,21,24,.14),
+                    transparent 58%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .pregunta-marca {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-style: italic;
+
+            font-size: 15px;
+
+            letter-spacing: .3em;
+
+            color: var(--carmesi);
+
+            margin-bottom: 44px;
+
+            position: relative;
+
+        }
+
+
+        .pregunta h2 {
+
+            max-width: 1140px;
+
+            margin: auto;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(2.4rem, 6.6vw, 6.6rem);
+
+            line-height: 1.1;
+
+            font-weight: 900;
+
+            position: relative;
+
+            letter-spacing: -.02em;
+
+        }
+
+
+        .pregunta h2 .verso {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+
+        .pregunta h2 .verso-1 {
+            color: var(--hueso);
+        }
+
+
+        .pregunta h2 .verso-2 {
+
+            color: transparent;
+
+            -webkit-text-stroke: 2px var(--gualda);
+
+            font-style: italic;
+
+        }
+
+
+        .pregunta h2 .verso-3 {
+
+            background: var(--carmesi);
+
+            color: var(--hueso);
+
+            display: inline-block;
+
+            padding: 0 20px;
+
+            transform: skewX(-6deg);
+
+            font-style: italic;
+
+        }
+
+
+        /* =====================================================
+           PIE · FOOTER
+        ====================================================== */
+
+        footer {
+
+            border-top: 3px double var(--gualda);
+
+            padding: 64px 0 34px;
+
+            background: var(--negro-2);
+
+            position: relative;
+
+        }
+
+
+        footer::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: -3px;
+            left: 0;
+
+            width: 100%;
+            height: 3px;
+
+            background:
+
+                repeating-linear-gradient(
+                    90deg,
+                    var(--carmesi) 0 12px,
+                    transparent 12px 18px
+                );
+
+        }
+
+
+        .pie-red {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 40px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 44px;
+
+        }
+
+
+        .pie-marca {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            font-family: "Cinzel", serif;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            letter-spacing: .18em;
+
+            color: var(--hueso);
+
+        }
+
+
+        .pie-logo {
+
+            width: 44px;
+            height: 44px;
+
+            object-fit: contain;
+
+            filter: invert(1) sepia(.35) hue-rotate(-12deg);
+
+        }
+
+
+        .pie-sub {
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 12px;
+
+            color: var(--ceniza);
+
+            letter-spacing: .14em;
+
+            margin-top: 12px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .pie-enlaces {
+
+            display: flex;
+
+            gap: 26px;
+
+            flex-wrap: wrap;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 11px;
+
+            letter-spacing: .18em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .pie-enlaces a {
+
+            color: var(--ceniza);
+
+            text-decoration: none;
+
+            transition: color .2s ease;
+
+        }
+
+
+        .pie-enlaces a:hover {
+            color: var(--gualda);
+        }
+
+
+        .derechos {
+
+            border-top: 1px solid var(--linea-suave);
+
+            padding-top: 22px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: .18em;
+
+            color: var(--sombra);
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-enlaces { display: none; }
+
+            .hero-red,
+            .estudio-red,
+            .hana-red,
+            .obra {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .dominios {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .dominio:nth-child(2n) { border-right: none; }
+
+
+            .hero-arte { min-height: 480px; }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .hero {
+                padding: 90px 0 40px;
+            }
+
+
+            .hero-red { gap: 30px; }
+
+
+            .hero-voz h1 { font-size: 3.4rem; }
+
+
+            .hero-arte {
+                min-height: 340px;
+                order: -1;
+            }
+
+
+            .dominios { grid-template-columns: 1fr; }
+
+
+            .dominio {
+
+                border-right: none;
+                border-bottom: 1px solid var(--linea);
+                min-height: 260px;
+
+            }
+
+
+            .dominio:nth-last-child(-n+4) {
+                border-bottom: 1px solid var(--linea);
+            }
+
+
+            .dominio:last-child { border-bottom: none; }
+
+
+            .pie-red,
+            .derechos {
+
+                flex-direction: column;
+
+            }
+
+
+            .pie-enlaces { flex-wrap: wrap; }
+
+
+            .obra-sello {
+
+                width: 58px;
+                height: 58px;
+                bottom: 14px;
+                left: 14px;
+                padding: 8px;
+
+            }
+
+            .obra-enlaces {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+        }
+
+
+        /* =====================================================
+           ACCESIBILIDAD
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         LÍNEA DE LUZ
+    ====================================================== -->
+
+    <div class="vela-linea"></div>
+
+
+    <!-- =====================================================
+         AZULEJO
+    ====================================================== -->
+
+    <div class="azulejo-fino"></div>
+
+
+    <!-- =====================================================
+         NAVEGACIÓN
+    ====================================================== -->
+
+    <nav>
+
+        <a href="#top" class="nav-marca">
+
+            <img
+                src="assets/DHA_logo_h.png"
+                alt="Digital Hana Artes"
+                class="nav-logo"
+            >
+
+            <span>Digital Hana Artes®</span>
+
+        </a>
+
+
+        <div class="nav-enlaces">
+
+            <a href="#about">Estudio</a>
+
+            <a href="#domains">Dominios</a>
+
+            <a href="#work">Obra</a>
+
+            <a href="#hana">Hana</a>
+
+            <a
+                href="https://github.com/DigitalHanaArts"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Código
+            </a>
+
+        </div>
+
+
+        <div class="idioma">
+
+            <input
+                type="checkbox"
+                id="idioma-input"
+                class="idioma-input"
+                aria-label="Abrir menú de idiomas"
+            >
+
+            <label for="idioma-input" class="idioma-boton">
+                [ES] ▾
+            </label>
+
+            <div class="idioma-lista" role="menu">
+
+                <a href="#" class="idioma-opcion activo">[Español]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha/" class="idioma-opcion">[English]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha-zh/" class="idioma-opcion">[中文]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha-ko/" class="idioma-opcion">[조선어]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha-hi/" class="idioma-opcion">[हिन्दी]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha-per/" class="idioma-opcion">[فارسی]</a>
+
+                <a href="https://digitalhanaarts.github.io/it_dha/" class="idioma-opcion">[Italiano]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha_ar/" class="idioma-opcion">[العربية]</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         PRINCIPAL
+    ====================================================== -->
+
+    <main id="top">
+
+
+        <!-- =================================================
+             PRIMER ACTO · HERO
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="copa">
+
+                <div class="hero-red">
+
+                    <div class="hero-voz">
+
+                        <span class="hero-encima">〔 Motor de arte computacional 〕</span>
+
+                        <div class="hero-epígrafe">
+
+                            «El duende es un poder misterioso que todos sienten
+                            y que ningún filósofo explica.»
+
+                            <span class="firma">— Federico García Lorca</span>
+
+                        </div>
+
+                        <h1>
+
+                            <span class="palabra palabra-1">DIGITAL</span>
+
+                            <span class="palabra palabra-2">HANA</span>
+
+                            <span class="palabra palabra-3">ARTES®</span>
+
+                        </h1>
+
+                        <p>
+
+                            Entre el <strong>arte</strong> y el <strong>algoritmo</strong>,
+
+                            entre los <strong>datos</strong> y el <strong>sueño</strong>,
+
+                            entre la <strong>inteligencia</strong> y el <strong>instinto</strong> —
+
+                            DHA opera en el vacío de tinta.
+
+                        </p>
+
+                        <div class="hero-acciones">
+
+                            <a href="#work" class="botón botón-primario">
+                                〔 Explorar la obra 〕
+                            </a>
+
+                            <a
+                                href="https://github.com/DigitalHanaArts"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="botón"
+                            >
+                                〔 GitHub ↗ 〕
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-arte">
+
+                        <div class="arco-marco">
+
+                            <div class="azulejo-interior"></div>
+
+                            <div class="rosácea">
+
+                                <div class="aro aro-1"></div>
+                                <div class="aro aro-2"></div>
+                                <div class="aro aro-3"></div>
+                                <div class="aro aro-4"></div>
+
+                            </div>
+
+                            <div class="monograma">H</div>
+
+                            <div class="arco-leyenda">DHA · Digital Hana Artes · Duende</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BANDA
+        ================================================== -->
+
+        <div class="banda">
+
+            <div class="banda-fila">
+
+                <span>Arte</span>
+                <span>Datos</span>
+                <span>IA</span>
+                <span>Blockchain</span>
+                <span>Generativo</span>
+                <span>Computacional</span>
+                <span>Inteligencia</span>
+                <span>Visualización</span>
+                <span>Abstracción</span>
+                <span>Duende</span>
+                <span>Azulejo</span>
+
+                <span>Arte</span>
+                <span>Datos</span>
+                <span>IA</span>
+                <span>Blockchain</span>
+                <span>Generativo</span>
+                <span>Computacional</span>
+                <span>Inteligencia</span>
+                <span>Visualización</span>
+                <span>Abstracción</span>
+                <span>Duende</span>
+                <span>Azulejo</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             EL ESTUDIO · ABOUT
+        ================================================== -->
+
+        <section id="about">
+
+            <div class="copa">
+
+                <div class="estudio-red">
+
+                    <div class="estudio-visual"></div>
+
+
+                    <div class="estudio-texto">
+
+                        <span class="acto-etiqueta">〔 I · El Estudio 〕</span>
+
+                        <h2>
+
+                            La técnica
+
+                            es
+
+                            <span class="subrayado">material.</span>
+
+                        </h2>
+
+                        <p>
+
+                            Digital Hana Artes es un taller experimental
+
+                            de creatividad computacional que opera
+
+                            en el <strong>espacio intersticial</strong>
+
+                            entre la tecnología y la expresión artística.
+
+                        </p>
+
+                        <p>
+
+                            Construimos software, sistemas visuales,
+
+                            experimentos de aprendizaje automático,
+
+                            obra de arte guiada por datos y activos
+
+                            digitales orientados a la blockchain —
+
+                            todo con una <strong>sensibilidad poshumana</strong>.
+
+                        </p>
+
+                        <p>
+
+                            Nuestra pregunta central no es simple:
+
+                            <strong>¿qué sucede cuando la computación
+
+                            se convierte en medio creativo?</strong>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOS DOMINIOS
+        ================================================== -->
+
+        <section id="domains">
+
+            <div class="copa">
+
+                <span class="acto-etiqueta">〔 II · Los Dominios 〕</span>
+
+                <h2 class="acto-título">
+
+                    Cuatro dominios.
+
+                    <span class="sombra">Un sistema.</span>
+
+                    <span class="tachado">Sin fronteras.</span>
+
+                </h2>
+
+                <p class="acto-intro">
+
+                    DHA opera a través de disciplinas, no dentro
+                    de una sola categoría tecnológica.
+                    Esta es la reja descompuesta.
+
+                </p>
+
+
+                <div class="dominios">
+
+
+                    <article class="dominio" data-número="I">
+
+                        <div class="dominio-símbolo">◇</div>
+
+                        <h3>Arte Digital</h3>
+
+                        <p>
+                            Sistemas generativos, arte algorítmico,
+                            fotografía computacional
+                            y medios digitales experimentales.
+                        </p>
+
+                    </article>
+
+
+                    <article class="dominio" data-número="II">
+
+                        <div class="dominio-símbolo">◌</div>
+
+                        <h3>Ciencia de Datos</h3>
+
+                        <p>
+                            Minería de datos, análisis, visualización,
+                            computación estadística
+                            y descubrimiento guiado por datos.
+                        </p>
+
+                    </article>
+
+
+                    <article class="dominio" data-número="III">
+
+                        <div class="dominio-símbolo">◎</div>
+
+                        <h3>Inteligencia</h3>
+
+                        <p>
+                            Aprendizaje automático, aprendizaje profundo,
+                            visión por computador
+                            e inteligencia artificial generativa.
+                        </p>
+
+                    </article>
+
+
+                    <article class="dominio" data-número="IV">
+
+                        <div class="dominio-símbolo">⛓</div>
+
+                        <h3>Blockchain</h3>
+
+                        <p>
+                            NFT, activos digitales, analítica en cadena
+                            y ecosistemas creativos
+                            descentralizados.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             OBRA
+        ================================================== -->
+
+        <section id="work">
+
+            <div class="copa">
+
+                <span class="acto-etiqueta">〔 III · Obra Selecta 〕</span>
+
+                <h2 class="acto-título">
+
+                    De los <span class="sombra">píxeles</span>
+
+                    a la <span class="tachado">inteligencia</span>.
+
+                </h2>
+
+
+                <!-- =========================================
+                     MLabChain — Cadena de Laboratorio
+                ========================================== -->
+                <div class="obra ancha">
+
+                    <div class="obra-visual">
+
+                        <img
+                            src="assets/MLabChain_v3_Banner.png"
+                            alt="MLabChain — plataforma de investigación blockchain"
+                            loading="lazy"
+                        >
+
+                        <img
+                            src="assets/mlabchain.png"
+                            alt="Sello MLabChain"
+                            class="obra-sello"
+                        >
+
+                    </div>
+
+                    <div class="obra-info">
+
+                        <span class="obra-tag">〔 Protocolo Blockchain 〕</span>
+
+                        <h3>Cadena<br>de <em>Laboratorio</em></h3>
+
+                        <p>
+                            Una plataforma de investigación e ingeniería
+                            blockchain — que enlaza la ciencia de
+                            laboratorio, la infraestructura descentralizada
+                            y la computación verificable.
+                        </p>
+
+                        <div class="tecnologías">
+
+                            <span>Blockchain</span>
+                            <span>Distribuido</span>
+                            <span>Web3</span>
+                            <span>Física de Altas Energías</span>
+                            <span>Investigación</span>
+
+                        </div>
+
+                        <div class="obra-enlaces">
+
+                            <a
+                                href="https://github.com/DigitalHanaArts/MLabChain"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="botón botón-primario"
+                            >
+                                〔 GitHub ↗ 〕
+                            </a>
+
+                            <a
+                                href="https://gitlab.cern.ch/abavarch/labchain"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="botón"
+                            >
+                                〔 GitLab ↗ 〕
+                            </a>
+
+                            <a
+                                href="https://digitalhanaarts.github.io/mlc/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="botón"
+                            >
+                                〔 Sitio web ↗ 〕
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DHA Vision -->
+                <div class="obra">
+
+                    <div class="obra-visual">
+
+                        <img
+                            src="assets/DHA_Vision.png"
+                            alt="DHA Vision"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="obra-info">
+
+                        <span class="obra-tag">〔 Plataforma Experimental 〕</span>
+
+                        <h3>DHA<br><em>Visión</em></h3>
+
+                        <p>
+                            Una plataforma de arte computacional
+                            basada en Julia, que explora cómo las
+                            fotografías pueden transformarse — mediante
+                            procesamiento de imágenes, aprendizaje
+                            automático y sistemas generativos —
+                            en nuevas obras de arte digital.
+                        </p>
+
+                        <div class="tecnologías">
+
+                            <span>Julia</span>
+                            <span>Flux</span>
+                            <span>Aprendizaje automático</span>
+                            <span>Procesamiento de imágenes</span>
+                            <span>Arte generativo</span>
+
+                        </div>
+
+                        <a
+                            href="https://github.com/DigitalHanaArts/DHA-Vision"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="botón"
+                        >
+                            〔 Ver proyecto ↗ 〕
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OpenSea -->
+                <div class="obra">
+
+                    <div class="obra-visual">
+
+                        <img
+                            src="assets/opensea.io.jpeg"
+                            alt="Colección OpenSea"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="obra-info">
+
+                        <span class="obra-tag">〔 Colección NFT 〕</span>
+
+                        <h3>Colección<br><em>OpenSea</em></h3>
+
+                        <p>
+                            Explore la colección oficial de Digital
+                            Hana Artes en OpenSea — activos digitales
+                            seleccionados, obras generativas y
+                            creaciones basadas en blockchain.
+                        </p>
+
+                        <div class="tecnologías">
+
+                            <span>NFT</span>
+                            <span>Ethereum</span>
+                            <span>Arte digital</span>
+                            <span>Blockchain</span>
+                            <span>OpenSea</span>
+
+                        </div>
+
+                        <a
+                            href="https://opensea.io/Digital__Hana__Arts"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="botón"
+                        >
+                            〔 Visitar OpenSea ↗ 〕
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HANA · ORIGEN
+        ================================================== -->
+
+        <section id="hana">
+
+            <div class="copa">
+
+                <div class="hana-red">
+
+                    <div class="hana-voz">
+
+                        <span class="acto-etiqueta">〔 IV · Origen 〕</span>
+
+                        <h2>
+
+                            <span class="palabra palabra-1">Conoce a</span>
+
+                            <span class="palabra palabra-2">Hana.</span>
+
+                        </h2>
+
+                        <p>
+                            Digital Hana Artes toma su nombre de Hana —
+                            la gatita en el corazón de la identidad visual.
+                        </p>
+
+                        <p>
+                            Su presencia introduce algo deliberadamente
+                            humano y orgánico en un mundo por lo demás
+                            computacional:
+
+                            <strong>curiosidad, individualidad y carácter.</strong>
+
+                        </p>
+
+                    </div>
+
+                    <div class="hana-imagen">
+
+                        <img
+                            src="assets/Hana_the_kitten.jpeg"
+                            alt="Hana, la gatita"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LA PREGUNTA
+        ================================================== -->
+
+        <section class="pregunta">
+
+            <div class="copa">
+
+                <span class="pregunta-marca">〔 V · La Pregunta 〕</span>
+
+                <h2>
+
+                    <span class="verso verso-1">¿Qué sucede</span>
+
+                    <span class="verso verso-2">cuando la computación</span>
+
+                    <span class="verso verso-3">se vuelve medio creativo?</span>
+
+                </h2>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         PIE
+    ====================================================== -->
+
+    <footer>
+
+        <div class="copa">
+
+            <div class="pie-red">
+
+                <div>
+
+                    <div class="pie-marca">
+
+                        <img
+                            src="assets/DHA_logo.png"
+                            alt="Digital Hana Artes"
+                            class="pie-logo"
+                        >
+
+                        <span>Digital Hana Artes®</span>
+
+                    </div>
+
+                    <div class="pie-sub">
+                        Arte × Datos × Inteligencia × Blockchain
+                    </div>
+
+                </div>
+
+                <div class="pie-enlaces">
+
+                    <a
+                        href="https://github.com/DigitalHanaArts"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        〔 GitHub 〕
+                    </a>
+
+                    <a href="#top">〔 Volver arriba ↑ 〕</a>
+
+                </div>
+
+            </div>
+
+            <div class="derechos">
+
+                <span>© 2026 Digital Hana Artes®</span>
+
+                <span>La computación como medio creativo</span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

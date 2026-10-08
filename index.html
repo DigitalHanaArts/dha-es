@@ -2086,6 +2086,204 @@
 
 
         /* =====================================================
+           OBRA DESTACADA · MLABCHAIN
+        ====================================================== */
+
+        .obra-destacada {
+
+            margin-bottom: 70px;
+            border: 1px solid var(--linea);
+            background: var(--negro-2);
+            overflow: hidden;
+            transition: border-color .3s ease, transform .3s ease;
+        }
+
+        .obra-destacada:hover {
+            border-color: var(--carmesi);
+            transform: translateY(-4px);
+        }
+
+        .mlc-banner {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1600 / 790;
+            overflow: hidden;
+            background: var(--negro);
+        }
+
+        .mlc-banner img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            filter: contrast(1.08) saturate(.92);
+            transition: transform .8s ease, filter .8s ease;
+        }
+
+        .obra-destacada:hover .mlc-banner img {
+            transform: scale(1.018);
+            filter: contrast(1.05) saturate(1.02);
+        }
+
+        .mlc-banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, transparent 48%, rgba(10,8,6,.62)),
+                linear-gradient(90deg, rgba(10,8,6,.22), transparent 36%, rgba(10,8,6,.12));
+            pointer-events: none;
+        }
+
+        .mlc-banner-label {
+            position: absolute;
+            left: clamp(18px, 4vw, 54px);
+            bottom: clamp(18px, 4vw, 42px);
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--hueso);
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+
+        .mlc-banner-label::before {
+            content: "";
+            width: 34px;
+            height: 1px;
+            background: var(--gualda);
+        }
+
+        .mlc-body {
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+            gap: 50px;
+            padding: clamp(34px, 5vw, 62px);
+        }
+
+        .mlc-brand {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+
+        .mlc-logo {
+            width: 72px;
+            height: 72px;
+            object-fit: contain;
+            flex: 0 0 auto;
+            padding: 8px;
+            background: var(--negro);
+            border: 1px solid var(--linea);
+            filter: none !important;
+        }
+
+        .mlc-tagline {
+            font-family: "Cinzel", serif;
+            color: var(--gualda);
+            font-size: 10px;
+            letter-spacing: .26em;
+            text-transform: uppercase;
+            margin: 3px 0 12px;
+        }
+
+        .mlc-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.8rem, 5.5vw, 5.8rem);
+            line-height: .9;
+            font-weight: 900;
+            letter-spacing: -.03em;
+        }
+
+        .mlc-title em {
+            color: var(--gualda);
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        .mlc-description {
+            margin: 30px 0 24px;
+            max-width: 760px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 18px;
+            line-height: 1.9;
+            color: var(--ceniza);
+        }
+
+        .mlc-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .mlc-tags span {
+            border: 1px solid var(--linea);
+            padding: 7px 12px;
+            font-family: "Inter", sans-serif;
+            font-size: 10px;
+            letter-spacing: .09em;
+            color: var(--pergamino);
+            background: var(--negro);
+            text-transform: uppercase;
+        }
+
+        .mlc-actions {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: stretch;
+            border-left: 1px solid var(--linea-suave);
+            padding-left: 38px;
+        }
+
+        .mlc-actions-label {
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--sombra);
+            margin-bottom: 14px;
+        }
+
+        .mlc-actions .botón {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .obras-secundarias {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .obra-secundaria {
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .obra-secundaria .obra-visual {
+            min-height: 320px;
+        }
+
+        .obra-secundaria .obra-info {
+            padding: 34px;
+            flex: 1;
+        }
+
+        .obra-secundaria .obra-info h3 {
+            font-size: clamp(2rem, 3.5vw, 3.4rem);
+        }
+
+        .obra-secundaria .obra-enlaces .botón {
+            padding: 11px 16px;
+        }
+
+
+        /* =====================================================
            HANA · ORIGEN
         ====================================================== */
 
@@ -2505,6 +2703,27 @@
 
         @media (max-width: 900px) {
 
+            .mlc-body {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .mlc-actions {
+                border-left: none;
+                border-top: 1px solid var(--linea-suave);
+                padding-left: 0;
+                padding-top: 26px;
+            }
+
+            .obras-secundarias {
+                grid-template-columns: 1fr;
+            }
+
+            .obra-secundaria .obra-visual {
+                min-height: 360px;
+            }
+
+
             .nav-enlaces { display: none; }
 
             .hero-red,
@@ -2531,6 +2750,32 @@
 
 
         @media (max-width: 600px) {
+
+            .mlc-banner {
+                aspect-ratio: 1600 / 790;
+            }
+
+            .mlc-body {
+                padding: 30px 22px 28px;
+            }
+
+            .mlc-brand {
+                gap: 12px;
+            }
+
+            .mlc-logo {
+                width: 54px;
+                height: 54px;
+            }
+
+            .mlc-description {
+                font-size: 17px;
+            }
+
+            .obra-secundaria .obra-visual {
+                min-height: 300px;
+            }
+
 
             .hero {
                 padding: 90px 0 40px;
@@ -3045,11 +3290,11 @@
 
 
                 <!-- =========================================
-                     MLabChain — Cadena de Laboratorio
+                     OBRA DESTACADA · MLABCHAIN
                 ========================================== -->
-                <div class="obra ancha">
+                <article class="obra-destacada">
 
-                    <div class="obra-visual">
+                    <div class="mlc-banner">
 
                         <img
                             src="assets/MLabChain_v3_Banner.png"
@@ -3057,46 +3302,78 @@
                             loading="lazy"
                         >
 
-                        <img
-                            src="assets/mlabchain.png"
-                            alt="Sello MLabChain"
-                            class="obra-sello"
-                        >
+                        <div class="mlc-banner-label">
+                            Protocolo de laboratorio · Investigación computacional
+                        </div>
 
                     </div>
 
-                    <div class="obra-info">
+                    <div class="mlc-body">
 
-                        <span class="obra-tag">〔 Protocolo Blockchain 〕</span>
+                        <div>
 
-                        <h3>Cadena<br>de <em>Laboratorio</em></h3>
+                            <div class="mlc-brand">
 
-                        <p>
-                            Una plataforma de investigación e ingeniería
-                            blockchain — que enlaza la ciencia de
-                            laboratorio, la infraestructura descentralizada
-                            y la computación verificable.
-                        </p>
+                                <img
+                                    src="assets/mlabchain.png"
+                                    alt="Logotipo de MLabChain"
+                                    class="mlc-logo"
+                                    loading="lazy"
+                                >
 
-                        <div class="tecnologías">
+                                <div>
 
-                            <span>Blockchain</span>
-                            <span>Distribuido</span>
-                            <span>Web3</span>
-                            <span>Física de Altas Energías</span>
-                            <span>Investigación</span>
+                                    <div class="mlc-tagline">
+                                        Blockchain · Ciencia · Computación
+                                    </div>
+
+                                    <h3 class="mlc-title">
+                                        MLab<em>Chain</em>
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+                            <p class="mlc-description">
+                                Una plataforma de investigación e ingeniería
+                                blockchain que enlaza la ciencia de laboratorio,
+                                la infraestructura descentralizada y la
+                                computación verificable.
+                            </p>
+
+                            <div class="mlc-tags">
+                                <span>Blockchain</span>
+                                <span>Distribuido</span>
+                                <span>Web3</span>
+                                <span>Física de Altas Energías</span>
+                                <span>Investigación</span>
+                            </div>
 
                         </div>
 
-                        <div class="obra-enlaces">
+                        <div class="mlc-actions">
+
+                            <div class="mlc-actions-label">
+                                Explorar MLabChain
+                            </div>
+
+                            <a
+                                href="https://digitalhanaarts.github.io/mlc/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="botón botón-primario"
+                            >
+                                <span>〔 Sitio web ↗ 〕</span>
+                            </a>
 
                             <a
                                 href="https://github.com/DigitalHanaArts/MLabChain"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="botón botón-primario"
+                                class="botón"
                             >
-                                〔 GitHub ↗ 〕
+                                <span>〔 GitHub ↗ 〕</span>
                             </a>
 
                             <a
@@ -3105,126 +3382,121 @@
                                 rel="noopener noreferrer"
                                 class="botón"
                             >
-                                〔 GitLab ↗ 〕
+                                <span>〔 CERN GitLab ↗ 〕</span>
                             </a>
 
-                            <a
-                                href="https://digitalhanaarts.github.io/mlc/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="botón"
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     OBRA SECUNDARIA
+                ========================================== -->
+                <div class="obras-secundarias">
+
+                    <!-- DHA Vision -->
+                    <article class="obra obra-secundaria">
+
+                        <div class="obra-visual">
+
+                            <img
+                                src="assets/DHA_Vision.png"
+                                alt="DHA Vision"
+                                loading="lazy"
                             >
-                                〔 Sitio web ↗ 〕
-                            </a>
 
                         </div>
 
-                    </div>
+                        <div class="obra-info">
 
-                </div>
+                            <span class="obra-tag">〔 Plataforma Experimental 〕</span>
 
+                            <h3>DHA<br><em>Visión</em></h3>
 
-                <!-- DHA Vision -->
-                <div class="obra">
+                            <p>
+                                Una plataforma de arte computacional basada
+                                en Julia, que explora cómo las fotografías
+                                pueden transformarse mediante procesamiento
+                                de imágenes, aprendizaje automático y
+                                sistemas generativos en nuevas obras de arte digital.
+                            </p>
 
-                    <div class="obra-visual">
+                            <div class="tecnologías">
+                                <span>Julia</span>
+                                <span>Flux</span>
+                                <span>Aprendizaje automático</span>
+                                <span>Procesamiento de imágenes</span>
+                                <span>Arte generativo</span>
+                            </div>
 
-                        <img
-                            src="assets/DHA_Vision.png"
-                            alt="DHA Vision"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="obra-info">
-
-                        <span class="obra-tag">〔 Plataforma Experimental 〕</span>
-
-                        <h3>DHA<br><em>Visión</em></h3>
-
-                        <p>
-                            Una plataforma de arte computacional
-                            basada en Julia, que explora cómo las
-                            fotografías pueden transformarse — mediante
-                            procesamiento de imágenes, aprendizaje
-                            automático y sistemas generativos —
-                            en nuevas obras de arte digital.
-                        </p>
-
-                        <div class="tecnologías">
-
-                            <span>Julia</span>
-                            <span>Flux</span>
-                            <span>Aprendizaje automático</span>
-                            <span>Procesamiento de imágenes</span>
-                            <span>Arte generativo</span>
+                            <div class="obra-enlaces">
+                                <a
+                                    href="https://github.com/DigitalHanaArts/DHA-Vision"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="botón"
+                                >
+                                    〔 Ver proyecto ↗ 〕
+                                </a>
+                            </div>
 
                         </div>
 
-                        <a
-                            href="https://github.com/DigitalHanaArts/DHA-Vision"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="botón"
-                        >
-                            〔 Ver proyecto ↗ 〕
-                        </a>
-
-                    </div>
-
-                </div>
+                    </article>
 
 
-                <!-- OpenSea -->
-                <div class="obra">
+                    <!-- OpenSea -->
+                    <article class="obra obra-secundaria">
 
-                    <div class="obra-visual">
+                        <div class="obra-visual">
 
-                        <img
-                            src="assets/opensea.io.jpeg"
-                            alt="Colección OpenSea"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="obra-info">
-
-                        <span class="obra-tag">〔 Colección NFT 〕</span>
-
-                        <h3>Colección<br><em>OpenSea</em></h3>
-
-                        <p>
-                            Explore la colección oficial de Digital
-                            Hana Artes en OpenSea — activos digitales
-                            seleccionados, obras generativas y
-                            creaciones basadas en blockchain.
-                        </p>
-
-                        <div class="tecnologías">
-
-                            <span>NFT</span>
-                            <span>Ethereum</span>
-                            <span>Arte digital</span>
-                            <span>Blockchain</span>
-                            <span>OpenSea</span>
+                            <img
+                                src="assets/opensea.io.jpeg"
+                                alt="Colección OpenSea"
+                                loading="lazy"
+                            >
 
                         </div>
 
-                        <a
-                            href="https://opensea.io/Digital__Hana__Arts"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="botón"
-                        >
-                            〔 Visitar OpenSea ↗ 〕
-                        </a>
+                        <div class="obra-info">
 
-                    </div>
+                            <span class="obra-tag">〔 Colección NFT 〕</span>
+
+                            <h3>Colección<br><em>OpenSea</em></h3>
+
+                            <p>
+                                Explore la colección oficial de Digital Hana
+                                Artes en OpenSea — activos digitales seleccionados,
+                                obras generativas y creaciones basadas en blockchain.
+                            </p>
+
+                            <div class="tecnologías">
+                                <span>NFT</span>
+                                <span>Ethereum</span>
+                                <span>Arte digital</span>
+                                <span>Blockchain</span>
+                                <span>OpenSea</span>
+                            </div>
+
+                            <div class="obra-enlaces">
+                                <a
+                                    href="https://opensea.io/Digital__Hana__Arts"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="botón"
+                                >
+                                    〔 Visitar OpenSea ↗ 〕
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </article>
 
                 </div>
-
             </div>
 
         </section>
